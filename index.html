@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon_harterink.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Harterink</title>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <h1 class="title">Harterink</h1>
+    </div>
+  </nav>
+
+  <div id="hero"></div>
+  <div id="fakescroll" style="height: 1000vh"></div>
+  <div class="page">
+    <div class="page-wrapper">
+      <!--       <section class="hero">
+        <div class="hero-wrapper">
+          <div class="hero-main">
+            <h1 class="hero-main-title">Harterink</h1>
+            <p class="hero-main-description">Webshop</p>
+          </div>
+          <div class="hero-second">
+            <p class="hero-second-subheading">Bob</p>
+            <p class="hero-second-subheading">portfolio</p>
+          </div>
+        </div>
+      </section> -->
+
+
+      <section class="first-section section right">
+        <div class="progress-wrapper progress-bar-wrapper-right">
+          <div class="progress-bar beige-background"></div>
+        </div>
+        <div class="section-intro-wrapper">
+          <h1 class="section-title" id="ttl">GOLF</h1>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <p class="section-text" id="txt">In een wereld vol prachtige en unieke vazen, is er één die eruit springt: de
+            blauwe
+            houten vaas die je zelf in elkaar moet zetten. Deze vaas combineert de charme van handgemaakt houtwerk met
+            een eigentijds ontwerp en een levendige blauwe kleur. Het is een creatief project dat zowel voldoening als
+            esthetisch plezier biedt.</p>
+          <h2 class="price">€ 40</h3>
+            <h3 class="section-heading">Variant</h3>
+            <img class="variant" id="image1" src="/Asset 1.1.png" onclick="changeText()">
+            <img class="variant" id="image2" src="/Asset 2.1.png" onclick="changeText1()">
+            <img class="variant" id="image3" src="/Asset 3.1.png" onclick="changeText2()">
+        </div>
+
+        <script async src="https://js.stripe.com/v3/buy-button.js">
+        </script>
+
+        <stripe-buy-button buy-button-id="buy_btn_1N3KWgIhyqHYmyD1byXerFFX"
+          publishable-key="pk_live_51Mc9oUIhyqHYmyD1qJgC1SxIqkUBx6CXb9LiKCB7jqt7e7QVbqXPdY4cNyUJG4FhUuI9WBm1bm9XKYlRU8xt7pdo00qYZkbJRm">
+        </stripe-buy-button>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+
+  <script>
+    // Add an event listener to the window scroll event
+    window.addEventListener('scroll', function () {
+      // Get the current scroll position
+      var scrollPosition = window.scrollY;
+
+      // Calculate the viewport height
+      var viewportHeight = window.innerHeight;
+
+      // Calculate the scroll position at 100vh
+      var targetScrollPosition = viewportHeight;
+
+      // Check if the scroll position has reached 100vh
+      if (scrollPosition >= targetScrollPosition) {
+        // Select the element you want to modify
+        var element = document.querySelector('.navbar');
+
+        // Add a class to the element
+        element.style.opacity = '1';
+      } else {
+        // Remove the class if the scroll position is less than 100vh
+        var element = document.querySelector('.navbar');
+
+        // Remove the class from the element
+        element.style.opacity = '0';
+      }
+    });
+  </script>
+
+  <script>
+    function changeText() {
+      var textElement = document.getElementById("ttl");
+      textElement.innerHTML = "GOLF";
+      var textElement1 = document.getElementById("txt");
+      textElement1.innerHTML = "In een wereld vol prachtige en unieke vazen, is er één die eruit springt: de blauwe houten vaas die je zelf in elkaar moet zetten. Deze vaas combineert de charme van handgemaakt houtwerk met een eigentijds ontwerp en een levendige blauwe kleur. Het is een creatief project dat zowel voldoening als esthetisch plezier biedt.";
+    }
+    function changeText1() {
+      var textElement = document.getElementById("ttl");
+      textElement.innerHTML = "WAVE";
+      var textElement1 = document.getElementById("txt");
+      textElement1.innerHTML = "Te midden van een overvloed aan prachtige en unieke vazen, schittert er één vaas uit: de paarse houten vaas die je zelf in elkaar moet zetten. Deze vaas combineert de charme van handgemaakt houtwerk met een eigentijds ontwerp en een verfijnde paarse kleur. Het is een creatief project dat zowel voldoening als esthetisch plezier biedt, met een strakker en minder golvend ontwerp dat een gevoel van elegantie en eenvoud uitstraalt.";
+    }
+    function changeText2() {
+      var textElement = document.getElementById("ttl");
+      textElement.innerHTML = "WAVE";
+      var textElement1 = document.getElementById("txt");
+      textElement1.innerHTML = "Te midden van een overvloed aan prachtige en unieke vazen, schittert er één vaas uit: de paarse houten vaas die je zelf in elkaar moet zetten. Deze vaas combineert de charme van handgemaakt houtwerk met een eigentijds ontwerp en een verfijnde paarse kleur. Het is een creatief project dat zowel voldoening als esthetisch plezier biedt, met een strakker en minder golvend ontwerp dat een gevoel van elegantie en eenvoud uitstraalt.";
+    }
+  </script>
+</body>
+
+</html>
