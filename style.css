@@ -199,4 +199,10 @@ div.fakescroll {
   .section {
     width: 100%;
   }
+
+  .navbar {
+    top: 1.5rem;
+    width: calc(100% - 4rem);
+    align-items: flex-start;
+  }
 }
