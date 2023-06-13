@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon_harterink.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Studio Harterink</title>
 </head>
 
@@ -40,28 +40,25 @@
           <div class="progress-bar beige-background"></div>
         </div>
         <div class="section-intro-wrapper">
-          <h1 class="section-title" id="ttl">GOLF</h1>
+          <h1 class="section-title" id="ttl">BUBBEL</h1>
         </div>
 
         <div class="section-detail-wrapper">
-          <p class="section-text" id="txt">In een wereld vol prachtige en unieke vazen, is er één die eruit springt: de
-            blauwe
-            houten vaas die je zelf in elkaar moet zetten. Deze vaas combineert de charme van handgemaakt houtwerk met
-            een eigentijds ontwerp en een levendige blauwe kleur. Het is een creatief project dat zowel voldoening als
-            esthetisch plezier biedt.</p>
-          <h2 class="price">€ 40</h3>
-            <h3 class="section-heading">Variant</h3>
-            <img class="variant" id="image1" src="/Asset 1.1.png" onclick="changeText()">
-            <img class="variant" id="image2" src="/Asset 2.1.png" onclick="changeText1()">
-            <img class="variant" id="image3" src="/Asset 3.1.png" onclick="changeText2()">
+          <p class="section-text" id="txt">
+            In een wereld vol prachtige en unieke vazen, is er één die eruit springt: de blauwe houten vaas die je zelf
+            in elkaar moet zetten. Deze vaas combineert de charme van handgemaakt houtwerk met een eigentijds ontwerp en
+            een levendige blauwe kleur. Het is een creatief project dat zowel voldoening als esthetisch plezier biedt.
+          </p>
+          <h3 class="section-heading">Varianten</h3>
+          <img class="variant" id="image1" src="/Asset 1.1.png" onclick="changeText()">
+          <img class="variant" id="image2" src="/Asset 2.1.png" onclick="changeText1()">
+          <img class="variant" id="image3" src="/Asset 3.1.png" onclick="changeText2()">
+          <h2 class="price">€ 45</h3>
+
         </div>
 
-        <script async src="https://js.stripe.com/v3/buy-button.js">
-        </script>
+        <a href="https://buy.stripe.com/6oEbLm1n90Hb1EYeUV" id="btn" class="button">Kopen</a>
 
-        <stripe-buy-button buy-button-id="buy_btn_1N3KWgIhyqHYmyD1byXerFFX"
-          publishable-key="pk_live_51Mc9oUIhyqHYmyD1qJgC1SxIqkUBx6CXb9LiKCB7jqt7e7QVbqXPdY4cNyUJG4FhUuI9WBm1bm9XKYlRU8xt7pdo00qYZkbJRm">
-        </stripe-buy-button>
       </section>
     </div>
   </div>
@@ -99,21 +96,27 @@
   <script>
     function changeText() {
       var textElement = document.getElementById("ttl");
-      textElement.innerHTML = "GOLF";
+      textElement.innerHTML = "BUBBEL";
       var textElement1 = document.getElementById("txt");
       textElement1.innerHTML = "In een wereld vol prachtige en unieke vazen, is er één die eruit springt: de blauwe houten vaas die je zelf in elkaar moet zetten. Deze vaas combineert de charme van handgemaakt houtwerk met een eigentijds ontwerp en een levendige blauwe kleur. Het is een creatief project dat zowel voldoening als esthetisch plezier biedt.";
+      var textElement2 = document.getElementById("btn");
+      textElement2.href = "https://buy.stripe.com/5kA16I3vhgG9gzS9AA";
     }
     function changeText1() {
       var textElement = document.getElementById("ttl");
-      textElement.innerHTML = "WAVE";
+      textElement.innerHTML = "GOLF";
       var textElement1 = document.getElementById("txt");
-      textElement1.innerHTML = "Te midden van een overvloed aan prachtige en unieke vazen, schittert er één vaas uit: de paarse houten vaas die je zelf in elkaar moet zetten. Deze vaas combineert de charme van handgemaakt houtwerk met een eigentijds ontwerp en een verfijnde paarse kleur. Het is een creatief project dat zowel voldoening als esthetisch plezier biedt, met een strakker en minder golvend ontwerp dat een gevoel van elegantie en eenvoud uitstraalt.";
+      textElement1.innerHTML = "De paarse houten vaas die je zelf in elkaar moet zetten. Deze vaas combineert de charme van handgemaakt houtwerk met een eigentijds ontwerp en een verfijnde paarse kleur. Het is een creatief project dat zowel voldoening als esthetisch plezier biedt, met een strakker en minder golvend ontwerp dat een gevoel van elegantie en eenvoud uitstraalt.";
+      var textElement2 = document.getElementById("btn");
+      textElement2.href = "https://buy.stripe.com/6oEbLm1n90Hb1EYeUV";
     }
     function changeText2() {
       var textElement = document.getElementById("ttl");
-      textElement.innerHTML = "WAVE";
+      textElement.innerHTML = "KNIK";
       var textElement1 = document.getElementById("txt");
-      textElement1.innerHTML = "Te midden van een overvloed aan prachtige en unieke vazen, schittert er één vaas uit: de paarse houten vaas die je zelf in elkaar moet zetten. Deze vaas combineert de charme van handgemaakt houtwerk met een eigentijds ontwerp en een verfijnde paarse kleur. Het is een creatief project dat zowel voldoening als esthetisch plezier biedt, met een strakker en minder golvend ontwerp dat een gevoel van elegantie en eenvoud uitstraalt.";
+      textElement1.innerHTML = "Ben je klaar om een vleugje elegantie en creativiteit aan jouw ruimte toe te voegen? Zoek niet verder dan onze verbluffende beige houten hoekige vaas. Met precisie vervaardigd en ontworpen om door jouzelf in elkaar te zetten, zal dit unieke stuk jouw individualiteit tentoonstellen en de schoonheid van elke kamer verbeteren.";
+      var textElement2 = document.getElementById("btn");
+      textElement2.href = "https://buy.stripe.com/6oE6r29TFdtX2J23ce";
     }
   </script>
 </body>
