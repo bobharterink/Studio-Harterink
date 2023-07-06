@@ -124,7 +124,10 @@
       textElement3.src="/Asset 2.png";
       var textElement3 = document.getElementById("image3");
       textElement3.src="/Asset 3.1.png";
-      window.scrollBy(0, -3000);
+      window.scrollBy({
+  top: -3000,
+  behavior: "smooth",
+});
     }
     function changeText2() {
       var textElement = document.getElementById("ttl");
