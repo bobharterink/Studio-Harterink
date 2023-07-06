@@ -129,10 +129,11 @@
       textElement3.src="/Asset 2.png";
       var textElement3 = document.getElementById("image3");
       textElement3.src="/Asset 3.1.png";
-      window.scrollBy({
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+        window.scrollBy({
   top: -3000,
   behavior: "smooth",
-});
+});}
     }
     function changeText2() {
       var textElement = document.getElementById("ttl");
@@ -147,10 +148,11 @@
       textElement3.src="/Asset 2.1.png";
       var textElement3 = document.getElementById("image3");
       textElement3.src="/Asset 3.png";
-      window.scrollBy({
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+        window.scrollBy({
   top: -3000,
   behavior: "smooth",
-});
+});}
     }
   </script>
 </body>
