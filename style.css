@@ -206,7 +206,6 @@ text-decoration: none;
 z-index: 9999;
 color: var(--color-text);
 }
-
 @media (max-width: 968px) {
   .section {
     width: 100%;
