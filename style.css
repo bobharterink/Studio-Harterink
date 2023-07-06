@@ -216,4 +216,16 @@ color: var(--color-text);
     width: calc(100% - 4rem);
     align-items: flex-start;
   }
+
+  #btn {
+    font-weight: 500;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 3% 40%;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
