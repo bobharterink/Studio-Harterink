@@ -207,10 +207,6 @@ z-index: 9999;
 color: var(--color-text);
 }
 
-.mobiletxt {
-  display: none;
-}
-
 @media (max-width: 968px) {
   .section {
     width: 100%;
@@ -220,9 +216,5 @@ color: var(--color-text);
     top: 1.5rem;
     width: calc(100% - 4rem);
     align-items: flex-start;
-  }
-
-  .mobiletxt {
-    display: block;
   }
 }
