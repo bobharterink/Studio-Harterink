@@ -258,6 +258,10 @@ transform: translate(-50%, -50%);
   }
 }
 
+.title {
+  font-weight: 600;
+}
+
 
 @media (max-width: 968px) {
   .section {
@@ -267,7 +271,6 @@ transform: translate(-50%, -50%);
   .navbar {
     top: 1.5rem;
     width: calc(100% - 4rem);
-    align-items: flex-start;
   }
 
   #btn {
