@@ -6,7 +6,15 @@ import GUI from "lil-gui";
 
 /* const gui = new GUI();
  */
-let scene, renderer, mixer, totalAnimationDuration, controls, targetObject, targetObject1, targetObject2, targetObject3;
+let scene,
+  renderer,
+  mixer,
+  totalAnimationDuration,
+  controls,
+  targetObject,
+  targetObject1,
+  targetObject2,
+  targetObject3;
 let actions = [];
 let childObject = null; // Declare a variable to store the "hout24" child object
 let initialColor = 0x000000;
@@ -28,11 +36,9 @@ let cylinderInitialColor = 0x000000;
 let sphere1InitialColor = 0x000000;
 var objectGroup = new THREE.Group();
 const clock = new THREE.Clock();
-const imageElement1 = document.getElementById('image1');
-const imageElement2 = document.getElementById('image2');
-const imageElement3= document.getElementById('image3');
-
-
+const imageElement1 = document.getElementById("image1");
+const imageElement2 = document.getElementById("image2");
+const imageElement3 = document.getElementById("image3");
 
 // Set up the scene, camera, and renderer
 scene = new THREE.Scene();
@@ -45,8 +51,7 @@ loader.load("/camera-path7.glb", (gltf) => {
    */ scene.add(gltf.scene);
   sceneCamera = gltf.scene.getObjectByName("test");
   sceneCamera.fov = 30;
-console.log(scene);
-
+  console.log(scene);
 
   /*   controls = new OrbitControls(sceneCamera, renderer.domElement);
    */
@@ -60,9 +65,6 @@ console.log(scene);
     action.play();
   });
 
-
-
-
   // Add directional light with shadow casting
   sunLight = new THREE.DirectionalLight("#ffffff", 0.5);
   sunLight.castShadow = true;
@@ -71,12 +73,12 @@ console.log(scene);
   sunLight.shadow.normalBias = 0.05;
   sunLight.position.set(5.5, 7, 3);
   scene.add(sunLight);
-/*   let sunLightHelper = new THREE.DirectionalLightHelper(sunLight, 5);
+  /*   let sunLightHelper = new THREE.DirectionalLightHelper(sunLight, 5);
   scene.add(sunLightHelper);
   const cameraHelper = new THREE.CameraHelper(sunLight.shadow.camera);
   scene.add(cameraHelper); */
 
-/*   gui.add(sunLight.position, "x", -10, 10, 0.01);
+  /*   gui.add(sunLight.position, "x", -10, 10, 0.01);
   gui.add(sunLight.position, "y", -10, 10, 0.01);
   gui.add(sunLight.position, "z", -10, 10, 0.01); */
 
@@ -87,7 +89,7 @@ console.log(scene);
     cameraHelper.update();
   }
 
-/*   gui
+  /*   gui
     .add(sunLight.shadow.camera, "right", -10, 10, 0.01)
     .onChange(updateCamera);
   gui.add(sunLight.shadow.camera, "left", -10, 10, 0.01).onChange(updateCamera); */
@@ -95,8 +97,6 @@ console.log(scene);
   // Add ambient light
   ambientLight = new THREE.AmbientLight("#ffffff", 1);
   scene.add(ambientLight);
-
-
 
   sphereObject = gltf.scene.getObjectByName("Sphere");
   sphereInitialColor = sphereObject.material.color.clone();
@@ -119,8 +119,6 @@ console.log(scene);
   childObject = gltf.scene.getObjectByName("hout24");
   initialColor = childObject.material.color.clone(); // Store the initial color
 
-
-
   // Make all objects receive shadow
   gltf.scene.traverse((child) => {
     if (child.isMesh) {
@@ -129,16 +127,15 @@ console.log(scene);
     }
   });
 
-
-  targetObject = scene.getObjectByName('Asset_53_Asset_53001');
-  targetObject1 = scene.getObjectByName('ringbeneden');
-  targetObject2 = scene.getObjectByName('ringboven');
+  targetObject = scene.getObjectByName("Asset_53_Asset_53001");
+  targetObject1 = scene.getObjectByName("ringbeneden");
+  targetObject2 = scene.getObjectByName("ringboven");
   const group = new THREE.Group();
 
   for (let i = 1; i <= 24; i++) {
     const meshName = `hout${i}`;
     const mesh = scene.getObjectByName(meshName);
-    
+
     if (mesh) {
       group.add(mesh);
     } else {
@@ -152,8 +149,7 @@ console.log(scene);
 
   scene.add(group);
 
-  targetObject3 = scene.getObjectByName('Asset_157');
-
+  targetObject3 = scene.getObjectByName("Asset_157");
 
   if (targetObject) {
     // Hide the object initially
@@ -165,55 +161,51 @@ console.log(scene);
     targetObject3.visible = false;
   }
 
-  
-  imageElement1.addEventListener('click', toggleObjectVisibility1, true);
-  imageElement2.addEventListener('click', toggleObjectVisibility2, true);
-  imageElement3.addEventListener('click', toggleObjectVisibility3, true);
-  
-  let lastClickedElement = null; // Variable to store the last clicked element
-  
+  imageElement1.addEventListener("click", toggleObjectVisibility1, true);
+  imageElement2.addEventListener("click", toggleObjectVisibility2, true);
+  imageElement3.addEventListener("click", toggleObjectVisibility3, true);
+
+  let lastClickedElement = imageElement1; // Variable to store the last clicked element
+
   function toggleObjectVisibility1() {
-      if (lastClickedElement === imageElement1 && group.visible) {
-          return; // Skip toggling if the same element is clicked and it's already visible
-      }
-  
-      group.visible = !group.visible;
-      targetObject.visible = false;
-      targetObject3.visible = false;
-  
-      lastClickedElement = imageElement1; // Update the last clicked element
+    if (lastClickedElement === imageElement1 && group.visible) {
+      return; // Skip toggling if the same element is clicked and it's already visible
+    }
+
+    group.visible = !group.visible;
+    targetObject.visible = false;
+    targetObject3.visible = false;
+
+    lastClickedElement = imageElement1; // Update the last clicked element
   }
-  
+
   function toggleObjectVisibility2() {
-      if (lastClickedElement === imageElement2 && targetObject.visible) {
-          return; // Skip toggling if the same element is clicked and it's already visible
-      }
-  
-      if (targetObject) {
-          targetObject.visible = !targetObject.visible;
-          group.visible = false;
-          targetObject3.visible = false;
+    if (lastClickedElement === imageElement2 && targetObject.visible) {
+      return; // Skip toggling if the same element is clicked and it's already visible
+    }
 
+    if (targetObject) {
+      targetObject.visible = !targetObject.visible;
+      group.visible = false;
+      targetObject3.visible = false;
+    }
 
-        }
-  
-      lastClickedElement = imageElement2; // Update the last clicked element
+    lastClickedElement = imageElement2; // Update the last clicked element
   }
-  
+
   function toggleObjectVisibility3() {
-      if (lastClickedElement === imageElement3 && targetObject3.visible) {
-          return; // Skip toggling if the same element is clicked and it's already visible
-      }
-  
-      if (targetObject3) {
-          targetObject3.visible = !targetObject3.visible;
-          group.visible = false;
-          targetObject.visible = false;
-      }
-  
-      lastClickedElement = imageElement3; // Update the last clicked element
+    if (lastClickedElement === imageElement3 && targetObject3.visible) {
+      return; // Skip toggling if the same element is clicked and it's already visible
+    }
+
+    if (targetObject3) {
+      targetObject3.visible = !targetObject3.visible;
+      group.visible = false;
+      targetObject.visible = false;
+    }
+
+    lastClickedElement = imageElement3; // Update the last clicked element
   }
-  
 
   totalAnimationDuration = 5;
   updateAnimationAndColor();
@@ -251,16 +243,15 @@ function updateAnimationAndColor() {
 
   const sphereColor = sphereInitialColor.clone();
   if (scrollPosition >= 1700) {
-    const targetColor = new THREE.Color(0xB8ABD4);
+    const targetColor = new THREE.Color(0xb8abd4);
     const t = Math.min((scrollPosition - 1700) / 1000, 1);
     sphereColor.lerp(targetColor, t);
   }
   sphereObject.material.color.copy(sphereColor);
-  
 
   const cylinderColor = cylinderInitialColor.clone();
   if (scrollPosition >= 2700) {
-    const targetColor = new THREE.Color(0xB8ABD4);
+    const targetColor = new THREE.Color(0xb8abd4);
     const t = Math.min((scrollPosition - 2700) / 1000, 1);
     cylinderColor.lerp(targetColor, t);
   }
@@ -269,18 +260,17 @@ function updateAnimationAndColor() {
   // Update the background color
   const backgroundColor = new THREE.Color(0xffffff);
   if (scrollPosition >= 1700) {
-    const targetColor = new THREE.Color(0xFAF4EB);
+    const targetColor = new THREE.Color(0xfaf4eb);
     const t = Math.min((scrollPosition - 1700) / 1000, 1);
     backgroundColor.lerp(targetColor, t);
   }
   renderer.setClearColor(backgroundColor);
 
   //update sunlight position x
-/*   if (scrollPosition >= 1000) {
+  /*   if (scrollPosition >= 1000) {
     sunLight.position.x = 1.5;
   }
   console.log(sunLight.position.x); */
-
 }
 
 // Call the updateAnimationAndColor function on scroll event
