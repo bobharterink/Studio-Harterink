@@ -1,31 +1,31 @@
 @font-face {
   font-family: schrifted;
-  src: url('SFTSchriftedSans-Bold.woff') format('woff'),
-    url('SFTSchriftedSans-Bold.woff2') format('woff2');
+  src: url('/SFTSchriftedSans-Bold.woff') format('woff'),
+    url('/SFTSchriftedSans-Bold.woff2') format('woff2');
   font-style: bold;
   font-weight: 700;
 }
 
 @font-face {
   font-family: schrifted;
-  src: url('SFTSchriftedSans-DemiBold.woff') format('woff'),
-    url('SFTSchriftedSans-DemiBold.woff2') format('woff2');
+  src: url('/SFTSchriftedSans-DemiBold.woff') format('woff'),
+    url('/SFTSchriftedSans-DemiBold.woff2') format('woff2');
   font-style: normal;
   font-weight: 600;
 }
 
 @font-face {
   font-family: schrifted;
-  src: url('SFTSchriftedSans-Medium.woff') format('woff'),
-    url('SFTSchriftedSans-Medium.woff2') format('woff2');
+  src: url('/SFTSchriftedSans-Medium.woff') format('woff'),
+    url('/SFTSchriftedSans-Medium.woff2') format('woff2');
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
   font-family: schrifted;
-  src: url('SFTSchriftedSans-Regular.woff') format('woff'),
-    url('SFTSchriftedSans-Regular.woff2') format('woff2');
+  src: url('/SFTSchriftedSans-Regular.woff') format('woff'),
+    url('/SFTSchriftedSans-Regular.woff2') format('woff2');
   font-style: normal;
   font-weight: 400;
 }
