@@ -206,6 +206,58 @@ text-decoration: none;
 z-index: 9999;
 color: var(--color-text);
 }
+
+/* scroll down icon */
+.scrollicon {
+position: fixed;
+top: 70%;
+left: 49%;
+}
+
+.scrollicon.scrolled {
+  display: none;
+}
+
+.scroll-container{
+  width: 30px;
+  height: 60px;
+  border: 2px solid white;
+  border-radius: 15px;
+  position: relative;
+}
+
+.scroller{
+  width: 18px;
+  border-radius: 8px;
+  background-color: white;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  bottom: 34px;
+  animation: scroller 1500ms ease-out infinite;
+}
+
+@keyframes scroller{
+  0%{
+    bottom: 34px;
+  }
+  5%{
+    top: 4px;
+  }
+  32%{    
+    bottom: 4px;
+  }
+  66%{
+    top: 34px;
+    bottom: 4px;
+  }
+  100%{
+    top: 4px;
+    bottom: 34px;
+  }
+}
+
+
 @media (max-width: 968px) {
   .section {
     width: 100%;
@@ -231,5 +283,55 @@ color: var(--color-text);
 
   p{
     font-size: 1.1rem;
+  }
+
+  /* scroll down icon */
+.scrollicon {
+  position: fixed;
+  top: 70%;
+  left: 49%;
+  }
+  
+  .scrollicon.scrolled {
+    display: none;
+  }
+  
+  .scroll-container{
+    width: 16px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 15px;
+    position: relative;
+  }
+  
+  .scroller{
+    width: 8px;
+    border-radius: 4px;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 17px;
+    animation: scroller 1500ms ease-out infinite;
+  }
+
+  @keyframes scroller{
+    0%{
+      bottom: 17px;
+    }
+    5%{
+      top: 2px;
+    }
+    32%{    
+      bottom: 2px;
+    }
+    66%{
+      top: 17px;
+      bottom: 2px;
+    }
+    100%{
+      top: 2px;
+      bottom: 17px;
+    }
   }
 }

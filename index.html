@@ -20,6 +20,14 @@
     </div>
   </nav>
 
+  <!-- scroll down -->
+  <div class="scrollicon">
+    <div class="scroll-container">
+      <div class="scroller">
+      </div>
+    </div>
+  </div>
+
   <div id="hero"></div>
   <div id="fakescroll" style="height: 1000vh"></div>
   <div class="page">
@@ -64,6 +72,20 @@
     </div>
   </div>
   <script type="module" src="/main.js"></script>
+
+  <script>
+    window.onscroll = function() {
+      var element = document.querySelector('.scrollicon');
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > 100) {
+        element.classList.add('scrolled');
+      } else {
+        element.classList.remove('scrolled');
+      }
+    };
+  </script>
+
 
   <script>
     // Add an event listener to the window scroll event
