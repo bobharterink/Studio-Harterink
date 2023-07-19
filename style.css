@@ -211,7 +211,8 @@ color: var(--color-text);
 .scrollicon {
 position: fixed;
 top: 70%;
-left: 49%;
+left: 50%;
+transform: translate(-50%, -50%);
 }
 
 .scrollicon.scrolled {
