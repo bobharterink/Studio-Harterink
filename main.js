@@ -4,7 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import GUI from "lil-gui";
 
-const gui = new GUI();
+// const gui = new GUI();
 
 let scene,
   renderer,
@@ -63,8 +63,8 @@ loader.load("/tstvaasanimation2.glb", (gltf) => {
    */ scene.add(gltf.scene);
   sceneCamera = gltf.scene.getObjectByName("test");
   sceneCamera.fov = 30;
-  console.log(scene);
-
+  /*   console.log(scene);
+   */
   /*   controls = new OrbitControls(sceneCamera, renderer.domElement);
    */
   // Create AnimationMixer and save the duration of the animation
@@ -90,9 +90,9 @@ loader.load("/tstvaasanimation2.glb", (gltf) => {
   const cameraHelper = new THREE.CameraHelper(sunLight.shadow.camera);
   scene.add(cameraHelper); */
 
-  gui.add(sunLight.position, "x", -10, 10, 0.01);
+  /*   gui.add(sunLight.position, "x", -10, 10, 0.01);
   gui.add(sunLight.position, "y", -10, 10, 0.01);
-  gui.add(sunLight.position, "z", -10, 10, 0.01);
+  gui.add(sunLight.position, "z", -10, 10, 0.01); */
 
   function updateCamera() {
     sunLight.target.updateMatrixWorld();
@@ -379,17 +379,16 @@ function updateAnimationAndColor() {
   cylinderObject1.material.color.copy(cylinderColor1);
 
   // de kleur blijft, alleen gaat niet terug naar wit.
-  /* function onScroll(scrollPosition) {
-  // Kleur van de cylindervormige stand veranderen
-  const cylinderColor = cylinderInitialColor.clone();
-  if (scrollPosition >= 2700) {
-    const targetColor = clickedCylinderColor; // Gebruik de kleur ingesteld door het klikken
-    const t = Math.min((scrollPosition - 2700) / 1000, 1);
-    cylinderColor.lerp(targetColor, t);
-  }
-  cylinderObject.material.color.copy(cylinderColor);
-}
- */
+  /*   function onScroll(scrollPosition) {
+    // Kleur van de cylindervormige stand veranderen
+    const cylinderColor = cylinderInitialColor.clone();
+    if (scrollPosition >= 2700) {
+      const targetColor = clickedCylinderColor; // Gebruik de kleur ingesteld door het klikken
+      const t = Math.min((scrollPosition - 2700) / 1000, 1);
+      cylinderColor.lerp(targetColor, t);
+    }
+    cylinderObject.material.color.copy(cylinderColor);
+  } */
 
   // Update the background color
   const backgroundColor = new THREE.Color(0xffffff);
@@ -434,7 +433,8 @@ function updateAnimationAndColor() {
     sunLight.position.copy(newPosition);
   }
 
-  console.log(sunLight.position.x);
+  /*   console.log(sunLight.position.x);
+   */
 }
 // Call the updateAnimationAndColor function on scroll event
 window.addEventListener("scroll", updateAnimationAndColor);
