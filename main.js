@@ -260,8 +260,8 @@ loader.load("/tstvaasanimation2.glb", (gltf) => {
       groupvaas3.visible = false;
 
       //background color change
-      const bkgrncolor = new THREE.Color(0xfaf4eb);
-      renderer.setClearColor(bkgrncolor);
+      const bkgrncolor1 = new THREE.Color(0xfaf4eb);
+      renderer.setClearColor(bkgrncolor1);
 
       //stand change
       const newColor = new THREE.Color(0x88c5dc);
