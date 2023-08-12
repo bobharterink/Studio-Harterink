@@ -316,18 +316,20 @@ function updateAnimationAndColor() {
 
   mixer.update(0);
 
+  // Color Bubble
   if (initialColor) {
     const currentColor = initialColor.clone();
     // Calculate the new color based on the scroll position or time
     // Example: linear interpolation between initial color and target color
     if (scrollPosition >= 1700) {
-      const targetColor = new THREE.Color(0x88c5dc);
+      const targetColor = new THREE.Color(0xc4999f);
       const t = Math.min((scrollPosition - 1700) / 1000, 1); // Ensure t is between 0 and 1
       currentColor.lerp(targetColor, t);
     }
     childObject.material.color.copy(currentColor);
   }
 
+  // Color golf
   if (initialColor1) {
     const currentColor = initialColor1.clone();
     // Calculate the new color based on the scroll position or time
@@ -340,12 +342,13 @@ function updateAnimationAndColor() {
     childObject1.material.color.copy(currentColor);
   }
 
+  // Color knik
   if (initialColor2) {
     const currentColor = initialColor2.clone();
     // Calculate the new color based on the scroll position or time
     // Example: linear interpolation between initial color and target color
     if (scrollPosition >= 1700) {
-      const targetColor = new THREE.Color(0xf6f4cf);
+      const targetColor = new THREE.Color(0x030303);
       const t = Math.min((scrollPosition - 1700) / 1000, 1); // Ensure t is between 0 and 1
       currentColor.lerp(targetColor, t);
     }
