@@ -322,7 +322,7 @@ function updateAnimationAndColor() {
     // Calculate the new color based on the scroll position or time
     // Example: linear interpolation between initial color and target color
     if (scrollPosition >= 1700) {
-      const targetColor = new THREE.Color(0xc4999f);
+      const targetColor = new THREE.Color(0x88c5dc);
       const t = Math.min((scrollPosition - 1700) / 1000, 1); // Ensure t is between 0 and 1
       currentColor.lerp(targetColor, t);
     }
@@ -348,7 +348,7 @@ function updateAnimationAndColor() {
     // Calculate the new color based on the scroll position or time
     // Example: linear interpolation between initial color and target color
     if (scrollPosition >= 1700) {
-      const targetColor = new THREE.Color(0x030303);
+      const targetColor = new THREE.Color(0xfaf4eb);
       const t = Math.min((scrollPosition - 1700) / 1000, 1); // Ensure t is between 0 and 1
       currentColor.lerp(targetColor, t);
     }
