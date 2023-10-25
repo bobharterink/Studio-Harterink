@@ -58,7 +58,7 @@ scene = new THREE.Scene();
 // Load GLB file using GLTFLoader
 const loader = new GLTFLoader();
 let sceneCamera = null;
-loader.load("/tstvaasanimation2.glb", (gltf) => {
+loader.load("/kijk5.glb", (gltf) => {
   /*   objectGroup.add(gltf.scene);
    */ scene.add(gltf.scene);
   sceneCamera = gltf.scene.getObjectByName("test");
