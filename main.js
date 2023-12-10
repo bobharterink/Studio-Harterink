@@ -266,7 +266,7 @@ loader.load("/juist2.glb", (gltf) => {
       renderer.setClearColor(bkgrncolor1);
 
       //stand change
-      const newColor = new THREE.Color(0x576d91);
+      const newColor = new THREE.Color(0x070707);
       cylinderObject.material.color = newColor;
     }
 
@@ -350,7 +350,7 @@ function updateAnimationAndColor() {
     // Calculate the new color based on the scroll position or time
     // Example: linear interpolation between initial color and target color
     if (scrollPosition >= 1700) {
-      const targetColor = new THREE.Color(0xe5e5e5);
+      const targetColor = new THREE.Color(0xcecece);
       const t = Math.min((scrollPosition - 1700) / 1000, 1); // Ensure t is between 0 and 1
       currentColor.lerp(targetColor, t);
     }
@@ -374,7 +374,7 @@ function updateAnimationAndColor() {
   }
   cylinderObject.material.color.copy(cylinderColor);
 
-  // Kleur van de vierkantestand? stand veranderen
+  // Kleur van de vierkantestand stand veranderen
   const cylinderColor1 = cylinderInitialColor1.clone();
   if (scrollPosition >= 2700) {
     const targetColor = new THREE.Color(0xa57474);
