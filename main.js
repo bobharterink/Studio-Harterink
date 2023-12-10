@@ -58,11 +58,13 @@ scene = new THREE.Scene();
 // Load GLB file using GLTFLoader
 const loader = new GLTFLoader();
 let sceneCamera = null;
-loader.load("/juist.glb", (gltf) => {
+loader.load("/juist2.glb", (gltf) => {
   /*   objectGroup.add(gltf.scene);
    */ scene.add(gltf.scene);
   sceneCamera = gltf.scene.getObjectByName("test");
   sceneCamera.fov = 30;
+  console.log(gltf.scene);
+
   /*   console.log(scene);
    */
   /*   controls = new OrbitControls(sceneCamera, renderer.domElement);
@@ -130,15 +132,15 @@ loader.load("/juist.glb", (gltf) => {
   cylinderInitialColor1 = cylinderObject.material.color.clone();
 
   // Set material color for child object with name "bubbel24"
-  childObject = gltf.scene.getObjectByName("bubbel24");
+  childObject = gltf.scene.getObjectByName("schub_24");
   initialColor = childObject.material.color.clone(); // Store the initial color
 
   // Set material color for child object with name "golf24"
-  childObject1 = gltf.scene.getObjectByName("golf24");
+  childObject1 = gltf.scene.getObjectByName("golf_24");
   initialColor1 = childObject1.material.color.clone(); // Store the initial color
 
   // Set material color for child object with name "knik24"
-  childObject2 = gltf.scene.getObjectByName("knik24");
+  childObject2 = gltf.scene.getObjectByName("hoek_24");
   initialColor2 = childObject2.material.color.clone(); // Store the initial color
 
   // Make all objects receive shadow
@@ -152,7 +154,7 @@ loader.load("/juist.glb", (gltf) => {
   //vaas3 knik
   const groupvaas3 = new THREE.Group();
   for (let i = 1; i <= 24; i++) {
-    const meshNamevaas3 = `knik${i}`;
+    const meshNamevaas3 = `hoek_${i}`;
     const meshvaas3 = scene.getObjectByName(meshNamevaas3);
 
     if (meshvaas3) {
@@ -174,7 +176,7 @@ loader.load("/juist.glb", (gltf) => {
   //vaas2 golf
   const groupvaas2 = new THREE.Group();
   for (let i = 1; i <= 24; i++) {
-    const meshNamevaas2 = `golf${i}`;
+    const meshNamevaas2 = `golf_${i}`;
     const meshvaas2 = scene.getObjectByName(meshNamevaas2);
 
     if (meshvaas2) {
@@ -192,7 +194,7 @@ loader.load("/juist.glb", (gltf) => {
   //vaas 1 bubbel
   const group = new THREE.Group();
   for (let i = 1; i <= 24; i++) {
-    const meshName = `bubbel${i}`;
+    const meshName = `schub_${i}`;
     const mesh = scene.getObjectByName(meshName);
 
     if (mesh) {
@@ -238,11 +240,11 @@ loader.load("/juist.glb", (gltf) => {
     lastClickedElement = imageElement1; // Update the last clicked element
 
     //background color change
-    const bkgrncolor = new THREE.Color(0xfaf4eb);
+    const bkgrncolor = new THREE.Color(0xf4f4f4);
     renderer.setClearColor(bkgrncolor);
 
     //stand change
-    const newColor = new THREE.Color(0xb8abd4);
+    const newColor = new THREE.Color(0x836ca8);
     cylinderObject.material.color = newColor;
 
     clickedCylinderColor = newColor;
@@ -260,11 +262,11 @@ loader.load("/juist.glb", (gltf) => {
       groupvaas3.visible = false;
 
       //background color change
-      const bkgrncolor1 = new THREE.Color(0xfaf4eb);
+      const bkgrncolor1 = new THREE.Color(0xf4f4f5);
       renderer.setClearColor(bkgrncolor1);
 
       //stand change
-      const newColor = new THREE.Color(0x88c5dc);
+      const newColor = new THREE.Color(0x576d91);
       cylinderObject.material.color = newColor;
     }
 
@@ -283,11 +285,11 @@ loader.load("/juist.glb", (gltf) => {
       cylinderObject.visible = false;
 
       //background color change
-      const bkgrncolor = new THREE.Color(0xebf4fa);
+      const bkgrncolor = new THREE.Color(0xafc5dd);
       renderer.setClearColor(bkgrncolor);
 
       //stand change
-      const newColor = new THREE.Color(0xb8abd4);
+      const newColor = new THREE.Color(0xa57474);
       cylinderObject.material.color = newColor;
     }
 
@@ -316,13 +318,13 @@ function updateAnimationAndColor() {
 
   mixer.update(0);
 
-  // Color Bubble
+  // Color Schub
   if (initialColor) {
     const currentColor = initialColor.clone();
     // Calculate the new color based on the scroll position or time
     // Example: linear interpolation between initial color and target color
     if (scrollPosition >= 1700) {
-      const targetColor = new THREE.Color(0x88c5dc);
+      const targetColor = new THREE.Color(0x374e85);
       const t = Math.min((scrollPosition - 1700) / 1000, 1); // Ensure t is between 0 and 1
       currentColor.lerp(targetColor, t);
     }
@@ -335,20 +337,20 @@ function updateAnimationAndColor() {
     // Calculate the new color based on the scroll position or time
     // Example: linear interpolation between initial color and target color
     if (scrollPosition >= 1700) {
-      const targetColor = new THREE.Color(0xb7acd2);
+      const targetColor = new THREE.Color(0xbf6464);
       const t = Math.min((scrollPosition - 1700) / 1000, 1); // Ensure t is between 0 and 1
       currentColor.lerp(targetColor, t);
     }
     childObject1.material.color.copy(currentColor);
   }
 
-  // Color knik
+  // Color hoek
   if (initialColor2) {
     const currentColor = initialColor2.clone();
     // Calculate the new color based on the scroll position or time
     // Example: linear interpolation between initial color and target color
     if (scrollPosition >= 1700) {
-      const targetColor = new THREE.Color(0xfaf4eb);
+      const targetColor = new THREE.Color(0xe5e5e5);
       const t = Math.min((scrollPosition - 1700) / 1000, 1); // Ensure t is between 0 and 1
       currentColor.lerp(targetColor, t);
     }
@@ -366,16 +368,16 @@ function updateAnimationAndColor() {
   // Kleur van de cylindervormige stand veranderen
   const cylinderColor = cylinderInitialColor.clone();
   if (scrollPosition >= 2700) {
-    const targetColor = new THREE.Color(0xb8abd4);
+    const targetColor = new THREE.Color(0x836ca8);
     const t = Math.min((scrollPosition - 2700) / 1000, 1);
     cylinderColor.lerp(targetColor, t);
   }
   cylinderObject.material.color.copy(cylinderColor);
 
-  // Kleur van de cylindervormige stand veranderen
+  // Kleur van de vierkantestand? stand veranderen
   const cylinderColor1 = cylinderInitialColor1.clone();
   if (scrollPosition >= 2700) {
-    const targetColor = new THREE.Color(0xb8abd4);
+    const targetColor = new THREE.Color(0xa57474);
     const t = Math.min((scrollPosition - 2700) / 1000, 1);
     cylinderColor1.lerp(targetColor, t);
   }
@@ -396,7 +398,7 @@ function updateAnimationAndColor() {
   // Update the background color
   const backgroundColor = new THREE.Color(0xffffff);
   if (scrollPosition >= 1700) {
-    const targetColor = new THREE.Color(0xfaf4eb);
+    const targetColor = new THREE.Color(0xf4f4f4);
     const t = Math.min((scrollPosition - 1700) / 1000, 1);
     backgroundColor.lerp(targetColor, t);
   }
@@ -446,6 +448,7 @@ window.addEventListener("scroll", updateAnimationAndColor);
 renderer = new THREE.WebGLRenderer({
   antialias: true,
   toneMapping: THREE.ACESFilmicToneMapping,
+
   shadowMap: THREE.PCFSoftShadowMap,
 });
 renderer.setPixelRatio(window.devicePixelRatio);
