@@ -324,7 +324,7 @@ function updateAnimationAndColor() {
     // Calculate the new color based on the scroll position or time
     // Example: linear interpolation between initial color and target color
     if (scrollPosition >= 1700) {
-      const targetColor = new THREE.Color(0x374e85);
+      const targetColor = new THREE.Color(0x24327d);
       const t = Math.min((scrollPosition - 1700) / 1000, 1); // Ensure t is between 0 and 1
       currentColor.lerp(targetColor, t);
     }
@@ -337,7 +337,7 @@ function updateAnimationAndColor() {
     // Calculate the new color based on the scroll position or time
     // Example: linear interpolation between initial color and target color
     if (scrollPosition >= 1700) {
-      const targetColor = new THREE.Color(0xbf6464);
+      const targetColor = new THREE.Color(0x5b181c);
       const t = Math.min((scrollPosition - 1700) / 1000, 1); // Ensure t is between 0 and 1
       currentColor.lerp(targetColor, t);
     }
@@ -453,7 +453,7 @@ renderer = new THREE.WebGLRenderer({
 });
 renderer.setPixelRatio(window.devicePixelRatio);
 // Better colors
-renderer.outputEncoding = THREE.sRGBEncoding;
+// renderer.outputEncoding = THREE.sRGBEncoding; //color adjustment
 renderer.setClearColor(0xffffff); // Set the background color to black
 renderer.shadowMap.enabled = true;
 
