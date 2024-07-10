@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
-import copy from "rollup-plugin-copy";
 
 export default defineConfig({
   build: {
@@ -8,15 +7,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         shipping: resolve(__dirname, "shipping.html"),
+        error: resolve(__dirname, "404.html"),
       },
-      plugins: [
-        copy({
-          targets: [
-            { src: "404.html", dest: "dist" },
-            { src: "_redirects", dest: "dist" },
-          ],
-        }),
-      ],
     },
   },
 });
